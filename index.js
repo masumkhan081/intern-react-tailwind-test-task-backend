@@ -20,8 +20,12 @@ app.listen(3000, () => {
   console.log("running ...");
 });
 
+app.get("/", (req, res) => {
+  res.send("running...")
+})
+
 // // close the server
-app.post("/", async (req, res) => {
+app.post("/api/test", async (req, res) => {
 
   const newUser = await User.create(req.body);
   console.log(JSON.stringify(newUser));
