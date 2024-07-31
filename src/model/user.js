@@ -1,5 +1,5 @@
 module.exports = require("mongoose").model(
-  "tasktestusers",
+  "testtask",
   require("mongoose").Schema({
     fullName: {
       type: String,
