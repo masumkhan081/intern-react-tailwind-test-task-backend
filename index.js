@@ -24,7 +24,10 @@ app.get("/", (req, res) => {
   res.send("running...")
 })
 
-// // close the server
+
+app.get("/api/test", async (req, res) => {
+  res.send("api-test");
+});
 app.post("/api/test", async (req, res) => {
   const newUser = await User.create(req.body);
   console.log(JSON.stringify(newUser));
