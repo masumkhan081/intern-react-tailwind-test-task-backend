@@ -24,7 +24,6 @@ app.get("/", (req, res) => {
   res.send("running...")
 })
 
-
 app.get("/api/test", async (req, res) => {
   res.send("api-test");
 });
