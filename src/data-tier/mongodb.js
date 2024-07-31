@@ -1,12 +1,15 @@
-const { connect, set } = require("mongoose");
+const mongoose = require("mongoose");
 require("dotenv").config();
 
-function initDB() {
-  set("strictQuery", true);
-  set("debug", process.env.MODE === "development");
-  connect(process.env.MONGO_URI, { useNewUrlParser: true })
-    .then((data) => console.log("db connected"))
-    .catch((err) => console.log(err.message));
-}
+const mongodbConnection = async () => {
+  try {
+    await mongoose.connect(process.env.DB_URL, {
+      dbName: "testtask",
+    });
+    console.log("Mongodb connected!");
+  } catch (error) {
+    console.log("Mongodb not connected!" + JSON.stringify(error));
+  }
+};
 
-module.exports = initDB;
+module.exports = mongodbConnection;

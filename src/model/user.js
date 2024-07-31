@@ -3,18 +3,18 @@ module.exports = require("mongoose").model(
   require("mongoose").Schema({
     fullName: {
       type: String,
-      min: 4,
+      min: 3,
       max: 100,
       required: true,
     },
     phone: {
       type: String,
-      min: 25,
-      max: 50,
+      min: 11,
+      max: 15,
       required: true,
     },
     address: {
-      type: String,
+      type: String, required: true,
     },
     age: {
       type: Number,
@@ -24,15 +24,14 @@ module.exports = require("mongoose").model(
     },
     email: {
       type: String,
-      min: 25,
+      min: 15,
       max: 200,
       required: true,
     },
     applyingPosition: {
       type: String,
-      min: 25,
-      max: 200,
-      required: true,
+      enum: ["frontend", "backend", "full-stack"],
+      required: false,
     },
     password: {
       type: String,
