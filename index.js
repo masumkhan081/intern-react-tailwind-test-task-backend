@@ -6,7 +6,7 @@ const cors = require("cors");
 require("dotenv").config();
 const initDB = require("./src/data-tier/mongodb");
 const { originControl } = require("./src/middleware/middlewares");
-const User = require("./src/model/user")
+const User = require("./src/model/user");
 
 // middlewares
 app.use(express.json());
@@ -26,7 +26,6 @@ app.get("/", (req, res) => {
 
 // // close the server
 app.post("/api/test", async (req, res) => {
-
   const newUser = await User.create(req.body);
   console.log(JSON.stringify(newUser));
   res.send(newUser);
