@@ -4,9 +4,9 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 require("dotenv").config();
-const initDB = require("./data-tier/mongodb");
-const { originControl } = require("./middleware/middlewares");
-const User = require("./model/user");
+const initDB = require("./src/data-tier/mongodb");
+const { originControl } = require("./src/middleware/middlewares");
+const User = require("./src/model/user");
 
 // middlewares
 app.use(express.json());
